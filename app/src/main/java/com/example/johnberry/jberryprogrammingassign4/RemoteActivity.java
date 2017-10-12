@@ -17,6 +17,8 @@ import org.w3c.dom.Text;
 public class RemoteActivity extends AppCompatActivity
         implements CompoundButton.OnCheckedChangeListener {
 
+    public int channelValue = 0;
+    public String channelText = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class RemoteActivity extends AppCompatActivity
 
         final TextView volDisplay = (TextView) findViewById(R.id.volumeDisplay);
 
-        
+
         volumeBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar volumeBar, int i, boolean b) {
@@ -107,7 +109,180 @@ public class RemoteActivity extends AppCompatActivity
         }
     }
 
+    public void onClick(View v){
+        TextView channelDisp = (TextView) findViewById(R.id.currentChannelDisplay);
+        channelDisp.setVisibility(View.VISIBLE);
 
+        switch (v.getId()) {
+            case  R.id.button0: {
+                if(channelText.length()<3){
+                    channelText = channelText + "0";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "0";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+            case R.id.button1: {
+                if(channelText.length()<3){
+                    channelText = channelText + "1";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "1";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+            case  R.id.button2: {
+                if(channelText.length()<3){
+                    channelText = channelText + "2";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "2";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+
+            case R.id.button3: {
+                if(channelText.length()<3){
+                    channelText = channelText + "3";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "3";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+            case R.id.button4: {
+                if(channelText.length()<3){
+                    channelText = channelText + "4";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "4";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+
+            case R.id.button5: {
+                if(channelText.length()<3){
+                    channelText = channelText + "5";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "5";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+            case  R.id.button6: {
+                if(channelText.length()<3){
+                    channelText = channelText + "6";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "6";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+
+            case R.id.button7: {
+                if(channelText.length()<3){
+                    channelText = channelText + "7";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "7";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+            case  R.id.button8: {
+                if(channelText.length()<3){
+                    channelText = channelText + "8";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "8";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+
+            case R.id.button9: {
+                if(channelText.length()<3){
+                    channelText = channelText + "9";
+                    channelDisp.setText(channelText);
+                }
+                else{
+                    channelText = "";
+                    channelText = channelText + "9";
+                    channelDisp.setText(channelText);
+                }
+                break;
+            }
+            case  R.id.CNN: {
+                channelText = "";
+                channelValue = 223;
+                channelDisp.setText(String.valueOf(channelValue));
+                break;
+            }
+
+            case R.id.CBS: {
+                channelText = "";
+                channelValue = 343;
+                channelDisp.setText(String.valueOf(channelValue));
+                //channelText = "";
+
+                break;
+            }
+            case R.id.FX: {
+                channelText = "";
+                channelValue = 213;
+                channelDisp.setText(String.valueOf(channelValue));
+                //channelText = "";
+
+                break;
+            }
+            case R.id.chMinus: {
+                channelValue = Integer.parseInt(String.valueOf(channelDisp.getText()));
+                channelValue--;
+                if(channelValue<1){
+                    channelValue = 1;
+                }
+                channelDisp.setText(String.valueOf(channelValue));
+
+                break;
+            }
+            case R.id.chPlus: {
+                channelValue = Integer.parseInt(String.valueOf(channelDisp.getText()));
+                channelValue++;
+               if(channelValue > 999){
+                    channelValue = 999;
+                }
+                channelDisp.setText(String.valueOf(channelValue));
+
+                break;
+            }
+        }
+    }
 
 
 }
