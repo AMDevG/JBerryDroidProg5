@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DVRActivity"></activity>
+        <activity android:name=".DVRActivity" />
+        <activity android:name=".ConfigurationActivity"></activity>
     </application>
 
 </manifest>

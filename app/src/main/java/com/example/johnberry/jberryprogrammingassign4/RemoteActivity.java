@@ -294,6 +294,8 @@ public class RemoteActivity extends AppCompatActivity
             }
 
             case R.id.configure: {
+                Intent configScreen = new Intent(getApplicationContext(), ConfigurationActivity.class);
+                startActivity(configScreen);
                 break;
             }
         }
