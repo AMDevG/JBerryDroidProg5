@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DVRActivity" />
-        <activity android:name=".ConfigurationActivity"></activity>
+        <activity android:name=".ConfigurationActivity"
+        android:launchMode = "singleTop"></activity>
     </application>
 
 </manifest>

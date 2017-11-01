@@ -63,9 +63,9 @@ public class RemoteActivity extends AppCompatActivity
         TextView channelDisp = (TextView) findViewById(R.id.currentChannelDisplay);
         SeekBar volumeBar = (SeekBar) findViewById(R.id.volumeSlider);
         TableLayout layout = (TableLayout) findViewById(R.id.tableLayout);
-        Button fav1 = (Button) findViewById(R.id.CBS);
-        Button fav2 = (Button) findViewById(R.id.CNN);
-        Button fav3 = (Button) findViewById(R.id.FX);
+        Button fav1 = (Button) findViewById(R.id.leftFav);
+        Button fav2 = (Button) findViewById(R.id.middleFav);
+        Button fav3 = (Button) findViewById(R.id.leftFav);
         Button channelInc = (Button) findViewById(R.id.chPlus);
         Button channelDecr = (Button) findViewById(R.id.chMinus);
 
@@ -244,24 +244,24 @@ public class RemoteActivity extends AppCompatActivity
                 }
                 break;
             }
-            case  R.id.CNN: {
+            case  R.id.leftFav: {
                 channelText = "";
-                channelValue = 223;
+                channelValue = ConfigurationActivity.getLeftChannel();
                 channelDisp.setText(String.valueOf(channelValue));
                 break;
             }
 
-            case R.id.CBS: {
+            case R.id.middleFav: {
                 channelText = "";
-                channelValue = 343;
+                channelValue = ConfigurationActivity.getMiddleChannel();
                 channelDisp.setText(String.valueOf(channelValue));
                 //channelText = "";
 
                 break;
             }
-            case R.id.FX: {
+            case R.id.rightFav: {
                 channelText = "";
-                channelValue = 213;
+                channelValue = ConfigurationActivity.getRightChannel();
                 channelDisp.setText(String.valueOf(channelValue));
                 //channelText = "";
 
@@ -291,12 +291,13 @@ public class RemoteActivity extends AppCompatActivity
             case R.id.DVR: {
                 Intent nextScreen = new Intent(getApplicationContext(), DVRActivity.class);
                 startActivity(nextScreen);
+                finish();
             }
 
             case R.id.configure: {
                 Intent configScreen = new Intent(getApplicationContext(), ConfigurationActivity.class);
                 startActivity(configScreen);
-                break;
+                finish();
             }
         }
     }
